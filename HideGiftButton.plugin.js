@@ -68,3 +68,8 @@ module.exports = class MyPlugin {
             document.querySelector(".buttons-uaqb-5").children[0].style.display = "none";
         }
     });
+
+// Literally all useless can just be done in Custom CSS using
+// .buttons-uaqb-5 > button:nth-child(1) {
+//     display: none;
+// }
