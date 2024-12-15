@@ -1,3 +1,12 @@
+/**
+ * @name CatsStuff
+ * @version 1.0.0.3
+ * @description Various Discord UI tweaks 
+ * @author Cats
+ *
+ * @source https://github.com/Cats1337/VencordStuff
+ */
+
 /* Hides/Removes Nitro, Shop in DMs, Gift button, Super React button, "Active Now" in Friends List, 'Speak Message' & 'Apps' from right click */
 [href="/store"], 
 [href='/shop'],
@@ -137,7 +146,34 @@ button:has(div[class^=emojiLockIconContainer]) { filter: grayscale(); }
   display: flex !important;
 }
 
-[class*="buttonContainer_"] > div[aria-label*="Activities"] { 
+
+/* -------------- */
+/* Expanded Voice */
+/* -------------- */
+/* Hide "Start An Activity" in bottom left */
+[class*="actionButtons_"] > button[aria-label="Start An Activity"],[class*="actionButtons_"] > button[aria-label="Turn On Camera"] {
+  display: none;
+}
+
+/* Hide "Turn On Camera" button in 'large vc view?' control buttons*/
+[class*="wrapper_"] > div[class*="controlButton_"]:has(button[aria-label="Turn On Camera"]) {
+  display: none;
+}
+[class*="wrapper_"] > div[class*="controlButton_"]:has(button[aria-label="Activities"]) {
+  display: none;
+}
+
+/* ---- */
+/* Chat */
+/* ---- */
+/* Hide all the buttons in the more menu unless hovered (Emoji, Edit, Reply) */
+[class^=buttonsInner_]:not(:hover)>:is(
+  [role=button]:not(:last-child), [class^=separator_]
+) {
+  display: none;
+}
+
+div[aria-label="Edit Image with Apps"]{
   display: none;
 }
 
@@ -149,10 +185,6 @@ button:has(div[class^=emojiLockIconContainer]) { filter: grayscale(); }
 [class^=membersGroup_]:has([d^="M10.56 1.1c-.46.05-.7.53-.64.98.18"]),
 div:not([class]):has([class^=facePile_]) { 
   display: none; 
-}
-
-.vc-settings-donate{
-  display: none;
 }
 
 /* APP -> BOT */
@@ -167,14 +199,14 @@ div:not([class]):has([class^=facePile_]) {
   line-height: 0!important;
 }
 
+/* Shush Vencord bot */
 [class*="message_"]:has([class*="contents_"] > img[src*="1017176847865352332"]):has(.channelMention) {
   display: none;
 }
 
-div[aria-label="Edit Image with Apps"]{
+.vc-settings-donate{
   display: none;
 }
-
 
 /* Hide Discovery Icon */
 [class*=unreadMentionsFixedFooter_]{bottom: 0px !important;}
