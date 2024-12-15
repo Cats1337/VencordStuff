@@ -1,4 +1,4 @@
-# BetterDiscord
+# Vencord
 
 <s>BetterDiscord</s> Vencord plugin(s)?
 
