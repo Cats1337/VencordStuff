@@ -159,7 +159,7 @@ button:has(div[class^=emojiLockIconContainer]) { filter: grayscale(); }
 [class*="wrapper_"] > div[class*="controlButton_"]:has(button[aria-label="Turn On Camera"]) {
   display: none;
 }
-[class*="wrapper_"] > div[class*="controlButton_"]:has(button[aria-label="Activities"]) {
+div[class*="controlButton_"]:has(button[aria-label="Start An Activity"]) {
   display: none;
 }
 
