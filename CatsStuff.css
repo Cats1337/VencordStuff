@@ -24,6 +24,7 @@
 
 /* Chatbox buttons */
 [aria-label="Send a gift"] { display: none; }
+[class^="expression-picker-chat-input-button"]:nth-child(4) { display: none; }
 [class*="channelAppLauncher_"] {display: none;}
 [class*="stickerButton_"] {display: none;}
 /* button[aria-label="Open GIF picker"] { display: none; } */
