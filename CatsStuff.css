@@ -105,6 +105,10 @@ button:has(div[class^=emojiLockIconContainer]) { filter: grayscale(); }
 [class^="burstReactionTooltipPrompt"] { display: none; }
 [class*="NitroLocked"] {display: none;}
 
+/* -------- */
+/* Confetti */
+/* -------- */
+#message-add-confetti-potion{display: none;}
 
 /* ------- */
 /* Privacy */
