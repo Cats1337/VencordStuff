@@ -47,7 +47,7 @@ button:has(div[class^=emojiLockIconContainer]) {
 [aria-label="Send a gift"],
 [class*="channelAppLauncher_"],
 [class*="stickerButton_"] {
-  display: none;
+  display: none !important;
 }
 
 /* --- Super Reactions --- */
@@ -62,7 +62,7 @@ button:has(div[class^=emojiLockIconContainer]) {
 
 /* Super reaction animation */
 [class*="shakeReaction"] { animation: none !important; }
-[class^="reactionInner"] > div > div[class^="effectsWrapper"] { display: none; }
+[class^="reactionInner"] > div > div[class^="effectsWrapper"] { display: none !important; }
 [class*="hideEmoji"] { animation: blink-emoji 1s linear infinite; opacity: 255; }
 @keyframes blink-emoji {  
   50% { opacity: 0; }
@@ -74,7 +74,7 @@ button:has(div[class^=emojiLockIconContainer]) {
 [class*="actionButtons_"] > button[aria-label="Turn On Camera"],
 div[class*="controlButton_"]:has(button[aria-label="Start An Activity"]),
 div[class*="controlButton_"]:has(button[aria-label="Turn On Camera"]) {
-    display: none;
+    display: none !important;
 }
 
 
@@ -87,7 +87,7 @@ div[class*="controlButton_"]:has(button[aria-label="Turn On Camera"]) {
 }
 
 [class^="iconGroup_"] > div:not([aria-label*="Muted"]):not([aria-label*="Deafened"]):not([aria-label="Live"]) {
-  display: none;
+  display: none !important;
 }
 
 /* Repair Live */
@@ -98,17 +98,34 @@ div[class*="controlButton_"]:has(button[aria-label="Turn On Camera"]) {
 /* -------------- */
 /* Expanded Voice */
 /* -------------- */
+/* Hide Activities */
+[class*="attachedCaretButtonContainer_"]:nth-child(3),
+[aria-label="Start An Activity"]
+{
+    display: none !important;
+}
+
+/* Hide Nubs */
+[class*="contextMenuNubExperiment_"][aria-label="More Options"]{
+    display: none !important;
+}
+
+/* Re-round the buttons */
+[class*="attachedButton_"]{
+    border-radius: 8px;
+}
+
 /* Hide "Start An Activity" in bottom left */
 [class*="actionButtons_"] > button[aria-label="Start An Activity"],[class*="actionButtons_"] > button[aria-label="Turn On Camera"] {
-  display: none;
+  display: none !important;
 }
 
 /* Hide "Turn On Camera" button in 'large vc view?' control buttons*/
 [class*="wrapper_"] > div[class*="controlButton_"]:has(button[aria-label="Turn On Camera"]) {
-  display: none;
+  display: none !important;
 }
 div[class*="controlButton_"]:has(button[aria-label="Start An Activity"]) {
-  display: none;
+  display: none !important;
 }
 
 /* ---- */
@@ -117,19 +134,19 @@ div[class*="controlButton_"]:has(button[aria-label="Start An Activity"]) {
 /* Hide all the buttons in the more menu unless hovered (Emoji, Edit, Reply) */
 [class^="buttonsInner_"]:not(:hover) > [role=button]:not(:last-child),
 [class^="buttonsInner_"]:not(:hover) > [class^="separator_"] {
-  display: none;
+  display: none !important;
 }
 
 /* Confetti */
 #message-add-confetti-potion,
 [class*="messageConfettiButton"],
 [class^="buttonsInner_"] > [role=button]:nth-child(3) {
-  display: none;
+  display: none !important;
 }
 
 /* Hide 'Edit Image With Apps' button */
 [class^="hoverButton"]:last-child{
-  display: none;
+  display: none !important;
 }
 
 /* ------- */
@@ -168,14 +185,10 @@ div[class*="controlButton_"]:has(button[aria-label="Start An Activity"]) {
 
 /* Shush Vencord bot */
 [class*="message_"]:has([class*="contents_"] > img[src*="1017176847865352332"]):has(.channelMention) {
-  display: none;
+  display: none !important;
 }
 
 /* Hide Vencord donation messages */
 .vc-settings-donate, .vc-special-card {
-    display: none;
+    display: none !important;
 }
-
-/* Remove Discovery Icon */
-[class*=unreadMentionsFixedFooter_]{bottom: 0px !important;}
-[class^=footer_]:has([class*=discoveryIcon_]) {display: none; }
