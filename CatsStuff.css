@@ -86,7 +86,10 @@ div[class*="controlButton_"]:has(button[aria-label="Turn On Camera"]) {
   max-height: 60vh;
 }
 
-[class^="iconGroup_"] > div:not([aria-label*="Muted"]):not([aria-label*="Deafened"]):not([aria-label="Live"]) {
+/* [class^="iconGroup_"] > div:not([aria-label*="Muted"]):not([aria-label*="Deafened"]):not([aria-label="Live"]) {
+  display: none !important;
+} */
+[class*="optionsButtonContainer"]{
   display: none !important;
 }
 
