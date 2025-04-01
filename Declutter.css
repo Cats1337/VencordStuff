@@ -1,0 +1,206 @@
+/**
+ * @name Declutter
+ * @version 1.0.0.4
+ * @description Various Discord UI tweaks to declutter the UI and remove unwanted elements.
+ * @author Cats
+ *
+ * @source https://github.com/Cats1337/VencordStuff
+ */
+
+/* --- General Nitro and Shop Cleanup --- */
+[href="/store"], 
+[href="/shop"],
+[class*="nowPlayingColumn"],
+a[data-list-item-id$="_nitro"],
+[class^="premiumIconWrapper"],
+[class*="hasCollectiblesUpsell"],
+[class*="characterCount"] > div[class*="upsell_"],
+[class*="selectorButtonPremiumRequired"],
+[class^="shinyButton"]:has(div[class*=premiumSubscribeButton]),
+[class^="nitroTextAndBadge"],
+[class^="tooltipPremiumContent"],
+[class^="nitroTopDividerContainer"], 
+div[class^="nitroTopDividerContainer"] ~ div,
+[class^="upsellContainer"],
+[class^="nitroBottomDivider"],
+[class^="categoryItemLockIconContainer"],
+[class^="emojiLockIconContainer"],
+button:has(div[class^=emojiLockIconContainer]) {
+  display: none !important;
+}
+
+/* Remove the purple background in the emoji picker and autocomplete */
+[class*=categorySectionNitroLocked] { background-color: unset !important; }
+/* Restore grayscale for locked emojis */
+[class*=categorySectionNitroLocked] > ul > li > button > img[class^="lockedEmoji"] {
+  filter: grayscale();
+}
+
+/* Keeps emoji button normal */
+[class^=spriteContainer_] {
+  --custom-emoji-sprite-row: 2 !important;
+  --custom-emoji-sprite-col: 10 !important;
+  display: flex !important;
+}
+
+/* --- Chatbox Buttons --- */
+[aria-label="Send a gift"],
+[class*="channelAppLauncher_"],
+[class*="stickerButton_"] {
+  display: none !important;
+}
+
+[class*="buttonContainer_"]:has([class*="stickerButton_"]) {
+    display: none !important;
+}
+
+/* --- Super Reactions --- */
+[id="super-reaction-picker-tab"],
+[class*="shakeReaction"],
+[class^="reactionInner"] > div > div[class^="effectsWrapper"],
+[class^="burstToggle"],
+[class^="burstReactionTooltipPrompt"],
+[class^="NitroLocked"] {
+  display: none !important;
+}
+
+/* Super reaction animation */
+[class*="shakeReaction"] { animation: none !important; }
+[class^="reactionInner"] > div > div[class^="effectsWrapper"] { display: none !important; }
+[class*="hideEmoji"] { animation: blink-emoji 1s linear infinite; opacity: 255; }
+@keyframes blink-emoji {  
+  50% { opacity: 0; }
+}
+
+/* --- Voice and Video --- */
+/* Remove "Start an Activity" and "Turn On Camera" */
+[class*="actionButtons_"] > button[aria-label="Start An Activity"],
+[class*="actionButtons_"] > button[aria-label="Turn On Camera"],
+div[class*="controlButton_"]:has(button[aria-label="Start An Activity"]),
+div[class*="controlButton_"]:has(button[aria-label="Turn On Camera"]) {
+    display: none !important;
+}
+
+
+/* Chat time connected fix */
+[class*="rtcConnectionStatusWrapper_"] {
+  margin-right: -10px;
+}
+
+/* ----------- */
+/* Hang Status */
+/* ----------- */
+[class^="popoutWrapper_"],
+[class*=userPopoutOverlayBackground] {
+  max-height: 60vh;
+}
+
+/* [class^="iconGroup_"] > div:not([aria-label*="Muted"]):not([aria-label*="Deafened"]):not([aria-label="Live"]) {
+  display: none !important;
+} */
+[class*="optionsButtonContainer"]{
+  display: none !important;
+}
+
+/* Repair Live */
+[class*="liveIconSpacing_"]{
+  display: flex !important;
+}
+
+/* -------------- */
+/* Expanded Voice */
+/* -------------- */
+/* Hide Activities */
+[class*="attachedCaretButtonContainer_"]:nth-child(3),
+[aria-label="Start An Activity"]
+{
+    display: none !important;
+}
+
+/* Hide Nubs */
+[class*="contextMenuNubExperiment_"][aria-label="More Options"]{
+    display: none !important;
+}
+
+/* Re-round the buttons */
+[class*="attachedButton_"]{
+    border-radius: 8px;
+}
+
+/* Hide "Start An Activity" in bottom left */
+[class*="actionButtons_"] > button[aria-label="Start An Activity"],[class*="actionButtons_"] > button[aria-label="Turn On Camera"] {
+  display: none !important;
+}
+
+/* Hide "Turn On Camera" button in 'large vc view?' control buttons*/
+[class*="wrapper_"] > div[class*="controlButton_"]:has(button[aria-label="Turn On Camera"]) {
+  display: none !important;
+}
+div[class*="controlButton_"]:has(button[aria-label="Start An Activity"]) {
+  display: none !important;
+}
+
+/* ---- */
+/* Chat */
+/* ---- */
+/* Hide all the buttons in the more menu unless hovered (Emoji, Edit, Reply) */
+[class^="buttonsInner_"]:not(:hover) > [role=button]:not(:last-child),
+[class^="buttonsInner_"]:not(:hover) > [class^="separator_"] {
+  display: none !important;
+}
+
+/* Confetti */
+#message-add-confetti-potion,
+[class*="messageConfettiButton"],
+[class^="buttonsInner_"] > [role=button]:nth-child(3) {
+  display: none !important;
+}
+
+/* Hide 'Edit Image With Apps' button */
+[class^="hoverButton"]:last-child{
+  display: none !important;
+}
+
+/* ------- */
+/* Privacy */
+/* ------- */
+/* Hide Email & Phone */
+[class^="field_"]:nth-child(3) > div > div > div > span,
+[class^="field_"]:nth-child(4) > div > div > div > span {
+    visibility: hidden;
+}
+
+/* Text for Hidden Email/Phone */
+[class^="field_"]:nth-child(3) > div > div > div > span::after,
+[class^="field_"]:nth-child(4) > div > div > div > span::after {
+  content: "Hidden";
+  color: grey;
+  font-style: italic;
+  position: absolute;
+  left: 2em;
+  visibility: visible;
+}
+
+/* ----- */
+/* Other */
+/* ----- */
+/* APP -> BOT */
+[class*=botTagRegular]:not([class*=botTagOP],[class*=botTagRemix])>span:before {
+  content: "Bot";
+  font-size: 0.625rem;
+  line-height: 1.3;
+}
+[class*=botTagRegular]:not([class*=botTagOP],[class*=botTagRemix])>span {
+  font-size: 0 !important;
+  line-height: 0 !important;
+}
+
+/* Shush Vencord bot */
+[class*="message_"]:has([class*="contents_"] > img[src*="1017176847865352332"]):has(.channelMention) {
+  display: none !important;
+}
+
+/* Hide Vencord donation messages */
+.vc-settings-donate, .vc-special-card {
+    display: none !important;
+}
