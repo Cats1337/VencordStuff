@@ -13,7 +13,7 @@ Various Discord UI tweaks to declutter the UI and remove unwanted elements.
 <a href=https://github.com/Cats1337/BetterDiscord/blob/main/SemiFixIcons.css>**Semi Fix Icons**</a>:
 <br>
 Fix SOME of the ULGY new icons. 
-This is a continuation/revamp/whatever of https://github.com/MrDiamondDog/noUglyIconsTheme, which was deprecated and continued by me, then I didn't eally care enough to update parts of it so now it's whatever I want to fix... (basically anything not hidden by my Declutter)
+This is a continuation/revamp/whatever of https://github.com/MrDiamondDog/noUglyIconsTheme, which was deprecated and continued by me, then I didn't really care enough to update parts of it so now it's whatever I want to fix... (basically anything not hidden by my Declutter)
 
 <p align="center">
 <a href="https://github.com/Cats1337">More to come?</a>
