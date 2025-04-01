@@ -1,6 +1,6 @@
 # Vencord
 
-<s>BetterDiscord</s> Vencord plugin(s)?
+Vencord Stuff, and Things(s)?
 
 <a href=https://github.com/Cats1337/BetterDiscord/blob/main/HideGiftButton.plugin.js>**Hide Gift Button**</a>:
 <br>
