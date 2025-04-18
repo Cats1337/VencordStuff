@@ -205,20 +205,19 @@ div[class*="controlButton_"]:has(button[aria-label="Start An Activity"]) {
     display: none !important;
 }
 
-
 /* Visual Refresh Fixes */
-.role_dfa8b6.pill_dfa8b6 {
+[class*="role_"][class*="pill"] {
   position: relative;
   background: none;
   border: none;
   padding-left: 28px;
 }
 
-.role_dfa8b6.pill_dfa8b6 > span {
+[class*="role_"][class*="pill"] > span {
   z-index: 1;
 }
 
-.role_dfa8b6.pill_dfa8b6 .roleRemoveButton_dfa8b6 {
+[class*="role_"][class*="pill"] [class*="roleRemoveButton_"] {
   position: absolute;
   top: 0px;
   left: 0px;
@@ -227,11 +226,11 @@ div[class*="controlButton_"]:has(button[aria-label="Start An Activity"]) {
   margin: 0 !important;
 }
 
-.role_dfa8b6.pill_dfa8b6 .roleCircle__4f569 {
+[class*="role_"][class*="pill"] [class*="roleCircle_"] {
   margin: 6px 8px;
 }
 
-.role_dfa8b6.pill_dfa8b6 .roleCircle__4f569::before {
+[class*="role_"][class*="pill"] [class*="roleCircle_"]::before {
   content: '';
   display: block;
   position: absolute;
@@ -247,32 +246,36 @@ div[class*="controlButton_"]:has(button[aria-label="Start An Activity"]) {
 
 .visual-refresh {
   --custom-channel-textarea-text-area-height: 56px;
-  .form_f75fb0 {
+  [class*="form_"] {
       display: flex;
       flex-direction: column;
   }
-  .channelTextArea_f75fb0 {
+  [class*="channelTextArea_"] {
       margin-bottom: 8px;
   }
-  .base_b88801 {
+  [class*="base_"] {
       position: static;
       order: -1;
   }
 }
 
-.visual-refresh section.panels_c48ade {
+.visual-refresh section[class*="panels_"] {
 margin-left: var(--custom-guild-list-width);
 width: calc(100% - var(--space-xs)*2 - var(--custom-guild-list-width)) !important;
 .actionButtons_e131a9 button {
   padding: 0;
 }
 }
-nav.guilds_c48ade {
+nav[class*="guilds_"] {
 margin-bottom: 0 !important;
 }
 
 
-/* Images thingy */
-[aria-label="Edit Image with Apps"]{
+/* Hide Apps button(s) */
+#channel-attach-SLASH_COMMAND {
+  display: none !important;
+}
+
+[class*="hoverButton_"][aria-label="Edit Image with Apps"] {
   display: none !important;
 }
