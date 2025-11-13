@@ -95,9 +95,6 @@ div[class*="controlButton_"]:has(button[aria-label="Turn On Camera"]) {
   max-height: 60vh;
 }
 
-/* [class^="iconGroup_"] > div:not([aria-label*="Muted"]):not([aria-label*="Deafened"]):not([aria-label="Live"]) {
-  display: none !important;
-} */
 [class*="optionsButtonContainer"]{
   display: none !important;
 }
@@ -144,8 +141,7 @@ div[class*="controlButton_"]:has(button[aria-label="Start An Activity"]) {
 /* Chat */
 /* ---- */
 /* Hide all the buttons in the more menu unless hovered (Emoji, Edit, Reply) */
-[class^="buttonsInner_"]:not(:hover) > [role=button]:not(:last-child),
-[class^="buttonsInner_"]:not(:hover) > [class^="separator_"] {
+[class^="buttonsInner_"]:not(:hover):not(:focus-within) > :not(:nth-last-child(2)) {
   display: none !important;
 }
 
@@ -159,6 +155,11 @@ div[class*="controlButton_"]:has(button[aria-label="Start An Activity"]) {
 /* Hide 'Edit Image With Apps' button */
 [class^="hoverButton"]:last-child{
   display: none !important;
+}
+
+/* Hide Apps in chatbar */
+.app-launcher-entrypoint{
+    display: none;
 }
 
 /* ------- */
@@ -278,4 +279,81 @@ margin-bottom: 0 !important;
 
 [class*="hoverButton_"][aria-label="Edit Image with Apps"] {
   display: none !important;
+}
+
+/* Font fix for a thing I forgot what exactly... */
+@font-face{
+  font-family:"Noto Sans Bamum";
+  src:url("https://notofonts.github.io/bamum/fonts/NotoSansBamum/full/ttf/NotoSansBamum-Regular.ttf") format("truetype");
+}
+
+@font-face{
+  font-family:"Noto Sans Batak";
+  src:url("https://notofonts.github.io/batak/fonts/NotoSansBatak/full/ttf/NotoSansBatak-Regular.ttf") format("truetype");
+}
+
+:root{
+  --font-primary: "gg sans",
+                  "Noto Sans Math",
+                  "Noto Sans Bamum",
+                  "Noto Sans Batak",
+                  "Noto Sans",
+                  "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+
+.micButtonParent__37e49 > .buttonChevron__37e49 {
+  display: none !important;
+}
+
+.micButtonParent__37e49 .micButtonWithMenu__37e49 {
+  border-bottom-right-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+
+/* revert chat input position */
+.channelTextArea_f75fb0 {
+    margin-bottom: 25px;
+}
+
+/* revert chat input height */
+.align-chat-input {
+    --custom-channel-textarea-text-area-height: 52px;
+}
+.align-chat-input .attachWrapper__0923f {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+/* revert typing bubbles position */
+.align-chat-input .inTextChannel_b88801.base_b88801 {
+    bottom: 0px;
+    top: auto;
+}
+.align-chat-input .inTextChannel_b88801 .typingDots_b88801 {
+    margin-left: 0;
+}
+.align-chat-input .inTextChannel_b88801 .text_b88801 {
+    margin-left: 4px;
+}
+
+/* move chat back down to usual position */
+.scrollerSpacer__36d07 {
+    height: 28px !important;
+}
+
+/* revert color of typing username */
+.align-chat-input .inTextChannel_b88801 .text_b88801>strong {
+    color: var(--text-secondary);
+}
+
+/* change attachment button svg back */
+.attachButton__0923f path {
+    d: path("M12 23a11 11 0 1 0 0-22 11 11 0 0 0 0 22Zm0-17a1 1 0 0 1 1 1v4h4a1 1 0 1 1 0 2h-4v4a1 1 0 1 1-2 0v-4H7a1 1 0 1 1 0-2h4V7a1 1 0 0 1 1-1Z");
+}
+
+/* remove weird gradient thing */
+.chatTypingGradientAtBottom__36d07, .chatTypingGradientNotAtBottom__36d07 {
+    display: none;
 }
