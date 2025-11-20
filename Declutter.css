@@ -29,6 +29,10 @@ button:has(div[class^=emojiLockIconContainer]) {
   display: none !important;
 }
 
+.channel__972a0.container_e45859:has(a[href="/store"]) {
+	display: none !important;
+}
+
 /* Remove the purple background in the emoji picker and autocomplete */
 [class*=categorySectionNitroLocked] { background-color: unset !important; }
 /* Restore grayscale for locked emojis */
@@ -356,4 +360,54 @@ margin-bottom: 0 !important;
 /* remove weird gradient thing */
 .chatTypingGradientAtBottom__36d07, .chatTypingGradientNotAtBottom__36d07 {
     display: none;
+}
+
+/* Make Friends and Quest thingy on same line */
+.scroller__99e7c[data-list-id^="private-channels-uid_"] {
+  scrollbar-width: 0;
+  scrollbar-color: transparent;
+  >.content_d125d2 {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    >div:not([class]):first-child,
+    >div[role="button"],
+    >.privateChannelsHeaderContainer__99e7c,
+    >.channel__972a0.dm__972a0 {
+      width: 100%;
+    }
+  }
+}
+
+.channel__972a0:not(.dm__972a0):has(a[data-list-item-id$="___quests"]) {
+    /* Scoped to only the Quests list item */
+    margin: 0 4px;
+    >.linkButton__972a0 >.link__972a0 {
+    padding: 8px;
+    >.avatarWithText__972a0 {
+        /* padding: 0; */
+        >.avatar__20a53 {
+        margin: 0;
+        }
+        >.content__20a53 {
+        display: none;
+        }
+    }
+    >.numberBadge__2b1f5 {
+        position: absolute;
+        left: 17.5px;
+        bottom: 0;
+        transform: scale(0.7);
+    }
+    >.newBadge__4ed1a {
+        position: absolute;
+        left: -3px;
+        bottom: 0;
+        transform: scale(0.7);
+    }
+    }
+}
+
+div[class^="friendsButtonContainer"] {
+    width: 82%;
 }
