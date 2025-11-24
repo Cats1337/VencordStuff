@@ -362,23 +362,6 @@ margin-bottom: 0 !important;
     display: none;
 }
 
-/* Make Friends and Quest thingy on same line */
-.scroller__99e7c[data-list-id^="private-channels-uid_"] {
-  scrollbar-width: 0;
-  scrollbar-color: transparent;
-  >.content_d125d2 {
-    display: flex;
-    flex-wrap: wrap;
-    align-content: flex-start;
-    >div:not([class]):first-child,
-    >div[role="button"],
-    >.privateChannelsHeaderContainer__99e7c,
-    >.channel__972a0.dm__972a0 {
-      width: 100%;
-    }
-  }
-}
-
 .channel__972a0:not(.dm__972a0):has(a[data-list-item-id$="___quests"]) {
     /* Scoped to only the Quests list item */
     margin: 0 4px;
@@ -408,6 +391,13 @@ margin-bottom: 0 !important;
     }
 }
 
+/* Make Friends and Quest thingy on same line */
+.wrapper_ebee1d {
+  top: 8px;
+  position: absolute;
+  right: 0;
+}
+
 div[class^="friendsButtonContainer"] {
-    width: 75%;
+    width: 80%;
 }
