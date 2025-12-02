@@ -392,12 +392,13 @@ margin-bottom: 0 !important;
 }
 
 /* Make Friends and Quest thingy on same line */
-.wrapper_ebee1d {
-  top: 8px;
+.wrapper__553bf {
   position: absolute;
+  top: 8px;
   right: 0;
 }
 
 div[class^="friendsButtonContainer"] {
     width: 80%;
 }
+
