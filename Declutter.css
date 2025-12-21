@@ -1,6 +1,6 @@
 /**
  * @name Declutter
- * @version 1.0.0.5
+ * @version 1.0.0.6
  * @description Various Discord UI tweaks to declutter the UI and remove unwanted elements.
  * @author Cats
  *
@@ -29,7 +29,7 @@ button:has(div[class^=emojiLockIconContainer]) {
   display: none !important;
 }
 
-.channel__972a0.container_e45859:has(a[href="/store"]) {
+._972a0d22c8afa7f0-channel.container__23ba6:has(a[href="/store"]) {
 	display: none !important;
 }
 
@@ -267,7 +267,7 @@ div[class*="controlButton_"]:has(button[aria-label="Start An Activity"]) {
 .visual-refresh section[class*="panels_"] {
 margin-left: var(--custom-guild-list-width);
 width: calc(100% - var(--space-xs)*2 - var(--custom-guild-list-width)) !important;
-.actionButtons_e131a9 button {
+.e131a99484292a19-actionButtons button {
   padding: 0;
 }
 }
@@ -306,18 +306,18 @@ margin-bottom: 0 !important;
 }
 
 
-.micButtonParent__37e49 > .buttonChevron__37e49 {
+._37e49614b9f110a9-micButtonParent > ._37e49614b9f110a9-buttonChevron {
   display: none !important;
 }
 
-.micButtonParent__37e49 .micButtonWithMenu__37e49 {
+._37e49614b9f110a9-micButtonParent ._37e49614b9f110a9-micButtonWithMenu {
   border-bottom-right-radius: 8px;
     border-top-right-radius: 8px;
 }
 
 
 /* revert chat input position */
-.channelTextArea_f75fb0 {
+.f75fb00fb7356cbe-channelTextArea {
     margin-bottom: 25px;
 }
 
@@ -325,64 +325,64 @@ margin-bottom: 0 !important;
 .align-chat-input {
     --custom-channel-textarea-text-area-height: 52px;
 }
-.align-chat-input .attachWrapper__0923f {
+.align-chat-input ._0923f156a0410684-attachWrapper {
     padding-top: 10px;
     padding-bottom: 10px;
 }
 
 /* revert typing bubbles position */
-.align-chat-input .inTextChannel_b88801.base_b88801 {
+.align-chat-input .b8880176888cc928-inTextChannel.b8880176888cc928-base {
     bottom: 0px;
     top: auto;
 }
-.align-chat-input .inTextChannel_b88801 .typingDots_b88801 {
+.align-chat-input .b8880176888cc928-inTextChannel .b8880176888cc928-typingDots {
     margin-left: 0;
 }
-.align-chat-input .inTextChannel_b88801 .text_b88801 {
+.align-chat-input .b8880176888cc928-inTextChannel .b8880176888cc928-text {
     margin-left: 4px;
 }
 
 /* move chat back down to usual position */
-.scrollerSpacer__36d07 {
+._36d072eab2b2e737-scrollerSpacer {
     height: 28px !important;
 }
 
 /* revert color of typing username */
-.align-chat-input .inTextChannel_b88801 .text_b88801>strong {
+.align-chat-input .b8880176888cc928-inTextChannel .b8880176888cc928-text>strong {
     color: var(--text-secondary);
 }
 
 /* change attachment button svg back */
-.attachButton__0923f path {
+._0923f156a0410684-attachButton path {
     d: path("M12 23a11 11 0 1 0 0-22 11 11 0 0 0 0 22Zm0-17a1 1 0 0 1 1 1v4h4a1 1 0 1 1 0 2h-4v4a1 1 0 1 1-2 0v-4H7a1 1 0 1 1 0-2h4V7a1 1 0 0 1 1-1Z");
 }
 
 /* remove weird gradient thing */
-.chatTypingGradientAtBottom__36d07, .chatTypingGradientNotAtBottom__36d07 {
+._36d072eab2b2e737-chatTypingGradientAtBottom, ._36d072eab2b2e737-chatTypingGradientNotAtBottom {
     display: none;
 }
 
-.channel__972a0:not(.dm__972a0):has(a[data-list-item-id$="___quests"]) {
+._972a0d22c8afa7f0-channel:not(._972a0d22c8afa7f0-dm):has(a[data-list-item-id$="___quests"]) {
     /* Scoped to only the Quests list item */
     margin: 0 4px;
-    >.linkButton__972a0 >.link__972a0 {
+    >._972a0d22c8afa7f0-linkButton >._972a0d22c8afa7f0-link {
     padding: 8px;
-    >.avatarWithText__972a0 {
+    >._972a0d22c8afa7f0-avatarWithText {
         /* padding: 0; */
-        >.avatar__20a53 {
+        >._20a53846fe2e8513-avatar {
         margin: 0;
         }
-        >.content__20a53 {
+        >._20a53846fe2e8513-content {
         display: none;
         }
     }
-    >.numberBadge__2b1f5 {
+    >._2b1f52e43a8f1c02-numberBadge {
         position: absolute;
         left: 17.5px;
         bottom: 0;
         transform: scale(0.7);
     }
-    >.newBadge__4ed1a {
+    >._4ed1af9a212b8f4f-newBadge {
         position: absolute;
         left: -3px;
         bottom: 0;
@@ -392,7 +392,7 @@ margin-bottom: 0 !important;
 }
 
 /* Make Friends and Quest thingy on same line */
-.wrapper__553bf {
+._553bf02027ac2419-wrapper {
   position: absolute;
   top: 8px;
   right: 0;
