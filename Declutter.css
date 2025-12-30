@@ -86,6 +86,10 @@ div[class*="controlButton"]:has(button[aria-label="Turn On Camera"]),
     display: none !important;
 }
 
+._1405b3b8e8eb5fd0-wrapper > ._1405b3b8e8eb5fd0-controlButton:first-child {
+  display: none;
+}
+
 /* Chat time connected fix */
 [class*="rtcConnectionStatusWrapper"] {
   margin-right: -10px;
@@ -111,7 +115,7 @@ div[class*="controlButton"]:has(button[aria-label="Turn On Camera"]),
 /* -------------- */
 /* Call/Expanded Voice */
 /* -------------- */
-[class*="attachedCaretButtonContainer"]:nth-child(2), /* Camera */
+.f1ceaca61b18918e-attachedCaretButtonContainer:nth-child(2), /* Camera */
 [class*="attachedCaretButtonContainer"]:nth-child(3), /* Soundboard */
 [class*="attachedCaretButtonContainer"]:nth-child(4), /* Gift */
 [class*="attachedCaretButtonContainer"]:has([aria-label="Start An Activity"]) /* Activities */
