@@ -115,7 +115,7 @@ div[class*="controlButton"]:has(button[aria-label="Turn On Camera"]),
 /* -------------- */
 /* Call/Expanded Voice */
 /* -------------- */
-.f1ceaca61b18918e-attachedCaretButtonContainer:nth-child(2), /* Camera */
+/* .f1ceaca61b18918e-attachedCaretButtonContainer:nth-child(2), Camera */
 [class*="attachedCaretButtonContainer"]:nth-child(3), /* Soundboard */
 [class*="attachedCaretButtonContainer"]:nth-child(4), /* Gift */
 [class*="attachedCaretButtonContainer"]:has([aria-label="Start An Activity"]) /* Activities */
