@@ -81,10 +81,11 @@ button:has(div[class*=emojiLockIconContainer]) {
 [class*="actionButtons"] > button[aria-label="Start An Activity"],
 [class*="actionButtons"] > button[aria-label="Turn On Camera"],
 div[class*="controlButton"]:has(button[aria-label="Start An Activity"]),
-div[class*="controlButton"]:has(button[aria-label="Turn On Camera"]),
-[class*="iconWrapper"][aria-label="Start Video Call"] {
+div[class*="controlButton"]:has(button[aria-label="Turn On Camera"]) {
     display: none !important;
 }
+/* ,
+[class*="iconWrapper"][aria-label="Start Video Call"] */
 
 ._1405b3b8e8eb5fd0-wrapper > ._1405b3b8e8eb5fd0-controlButton:first-child {
   display: none;
