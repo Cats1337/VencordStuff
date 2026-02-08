@@ -1273,6 +1273,15 @@ svg:has([d^="M5 2a3 3 0 0 0-3 3v14a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3V5a3 3 0 0 0-3-
     border-radius: 4px;
 }
 
+
+
+/* 
+
+
+*/
+
+
+
 /*Upload*/
 [d="M13.82 21.7c.17.05.14.3-.04.3H6a4 4 0 0 1-4-4V6a4 4 0 0 1 4-4h7.5c.28 0 .5.22.5.5V5a5 5 0 0 0 5 5h2.5c.28 0 .5.22.5.5v2.3a.4.4 0 0 1-.68.27l-.2-.2a3 3 0 0 0-4.24 0l-4 4a3 3 0 0 0 0 4.25c.3.3.6.46.94.58Z"] {
     d: path("M9 16h6v-6h4l-7-7-7 7h4v6zm-4 2h14v2H5v-2z");
@@ -1371,8 +1380,14 @@ svg:is(.icon_ac86f6) [d^="M13 16V5.41l3.3 3.3a1 1 0 1 0 1.4-1.42l-5-5a1 1 0 0 0-
     background: linear-gradient(-45deg, currentColor 12px, var(--status-danger) 0, var(--status-danger) 15px, currentColor 0);
 }
 
-.button__67645 .lottieIcon__5eb9b>svg>* {
+.button__67645:not(.micButtonWithMenu__37e49) .lottieIcon__5eb9b>svg>* {
     display: none;
+}
+
+/* Ensure mic/headset Lottie SVG parts are visible (slash, red state, etc.) */
+.button__67645.micButtonWithMenu__37e49 .lottieIcon__5eb9b>svg>*,
+.micButtonWithMenu__37e49 .lottieIcon__5eb9b>svg>* {
+    display: block !important;
 }
 
 /*Sound*/
@@ -1393,6 +1408,28 @@ svg:is(.icon_ac86f6) [d^="M13 16V5.41l3.3 3.3a1 1 0 1 0 1.4-1.42l-5-5a1 1 0 0 0-
 /*HeadsetSlash*/
 .button__67645:nth-last-child(4) .lottieIcon__5eb9b[style^="--__lottieIconColor: var(--status-danger)"]>svg {
     clip-path: path("M5.135 12.5054C5.0905 12.5018 5.0455 12.5 5 12.5H3.3333V10C3.3333 6.3233 6.3242 3.3333 10 3.3333 11.2341 3.3333 12.3909 3.6703 13.3832 4.2572L14.5918 3.0486C13.2743 2.1755 11.6955 1.6667 10 1.6667 5.405 1.6667 1.6667 5.4042 1.6667 10V15.9737L5.135 12.5054ZM16.4375 8.264C16.5869 8.8177 16.6667 9.3997 16.6667 10V12.5H15C14.08 12.5 13.3333 13.2467 13.3333 14.1667V16.6667C13.3333 17.5867 14.08 18.3333 15 18.3333H16.6667C17.5875 18.3333 18.3333 17.5867 18.3333 16.6667V10C18.3333 8.9229 18.128 7.8929 17.7544 6.9471L16.4375 8.264ZM2.6675 19.6869 1.489 18.5084 17.9882 2.0093 19.1667 3.1878 2.6675 19.6869Z");
+}
+
+/* Headset - robust selectors (fix for changed DOM structure) */
+.micButtonWithMenu__37e49 .lottieIcon__5eb9b>svg,
+.button__67645.micButtonWithMenu__37e49 .lottieIcon__5eb9b>svg {
+    clip-path: path("M10 1.6692C5.405 1.6692 1.6667 5.4067 1.6667 10.0026V16.6692C1.6667 17.5892 2.4125 18.3359 3.3333 18.3359H5C5.92 18.3359 6.6667 17.5892 6.6667 16.6692V14.1692C6.6667 13.2492 5.92 12.5026 5 12.5026H3.3333V10.0026C3.3333 6.3259 6.3242 3.3359 10 3.3359 13.6758 3.3359 16.6667 6.3259 16.6667 10.0026V12.5026H15C14.08 12.5026 13.3333 13.2492 13.3333 14.1692V16.6692C13.3333 17.5892 14.08 18.3359 15 18.3359H16.6667C17.5867 18.3359 18.3333 17.5892 18.3333 16.6692V10.0026C18.3333 5.4067 14.595 1.6692 10 1.6692Z");
+}
+
+.micButtonWithMenu__37e49 .lottieIcon__5eb9b[style^="--__lottieIconColor: var(--status-danger)"]>svg,
+.button__67645.micButtonWithMenu__37e49 .lottieIcon__5eb9b[style^="--__lottieIconColor: var(--status-danger)"]>svg {
+    clip-path: path("M5.135 12.5054C5.0905 12.5018 5.0455 12.5 5 12.5H3.3333V10C3.3333 6.3233 6.3242 3.3333 10 3.3333 11.2341 3.3333 12.3909 3.6703 13.3832 4.2572L14.5918 3.0486C13.2743 2.1755 11.6955 1.6667 10 1.6667 5.405 1.6667 1.6667 5.4042 1.6667 10V15.9737L5.135 12.5054ZM16.4375 8.264C16.5869 8.8177 16.6667 9.3997 16.6667 10V12.5H15C14.08 12.5 13.3333 13.2467 13.3333 14.1667V16.6667C13.3333 17.5867 14.08 18.3333 15 18.3333H16.6667C17.5875 18.3333 18.3333 17.5867 18.3333 16.6667V10C18.3333 8.9229 18.128 7.8929 17.7544 6.9471L16.4375 8.264ZM2.6675 19.6869 1.489 18.5084 17.9882 2.0093 19.1667 3.1878 2.6675 19.6869Z");
+}
+
+/* When the mic/headset toggle is active (aria-checked=true), force red color and show the slash */
+.micButtonWithMenu__37e49[aria-checked="true"] {
+    color: var(--status-danger) !important;
+}
+
+.micButtonWithMenu__37e49[aria-checked="true"] .lottieIcon__5eb9b>svg {
+    background: linear-gradient(-45deg, var(--status-danger) 0%, var(--status-danger) 100%) !important;
+    /* ensure the headset-slash clip path is applied when toggled */
+    clip-path: path("M5.135 12.5054C5.0905 12.5018 5.0455 12.5 5 12.5H3.3333V10C3.3333 6.3233 6.3242 3.3333 10 3.3333 11.2341 3.3333 12.3909 3.6703 13.3832 4.2572L14.5918 3.0486C13.2743 2.1755 11.6955 1.6667 10 1.6667 5.405 1.6667 1.6667 5.4042 1.6667 10V15.9737L5.135 12.5054ZM16.4375 8.264C16.5869 8.8177 16.6667 9.3997 16.6667 10V12.5H15C14.08 12.5 13.3333 13.2467 13.3333 14.1667V16.6667C13.3333 17.5867 14.08 18.3333 15 18.3333H16.6667C17.5875 18.3333 18.3333 17.5867 18.3333 16.6667V10C18.3333 8.9229 18.128 7.8929 17.7544 6.9471L16.4375 8.264ZM2.6675 19.6869 1.489 18.5084 17.9882 2.0093 19.1667 3.1878 2.6675 19.6869Z") !important;
 }
 
 /*Gear*/
