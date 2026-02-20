@@ -29,7 +29,7 @@ button:has(div[class*=emojiLockIconContainer]) {
   display: none !important;
 }
 
-._972a0d22c8afa7f0-channel.container__23ba6:has(a[href="/store"]) {
+.channel__972a0.container__23ba6:has(a[href="/store"]) {
 	display: none !important;
 }
 
@@ -87,7 +87,7 @@ div[class*="controlButton"]:has(button[aria-label="Turn On Camera"]) {
 /* ,
 [class*="iconWrapper"][aria-label="Start Video Call"] */
 
-._1405b3b8e8eb5fd0-wrapper > ._1405b3b8e8eb5fd0-controlButton:first-child {
+.wrapper__1405b > .controlButton__1405b:first-child {
   display: none;
 }
 
@@ -116,7 +116,7 @@ div[class*="controlButton"]:has(button[aria-label="Turn On Camera"]) {
 /* -------------- */
 /* Call/Expanded Voice */
 /* -------------- */
-/* .f1ceaca61b18918e-attachedCaretButtonContainer:nth-child(2), Camera */
+/* .attachedCaretButtonContainer_f1ceac:nth-child(2), Camera */
 [class*="attachedCaretButtonContainer"]:nth-child(3), /* Soundboard */
 [class*="attachedCaretButtonContainer"]:nth-child(4), /* Gift */
 [class*="attachedCaretButtonContainer"]:has([aria-label="Start An Activity"]) /* Activities */
@@ -275,7 +275,7 @@ button[aria-label="Reveal phone number"] {
 .visual-refresh section[class*="panels"] {
 margin-left: var(--custom-guild-list-width);
 width: calc(100% - var(--space-xs)*2 - var(--custom-guild-list-width)) !important;
-.e131a99484292a19-actionButtons button {
+.actionButtons_e131a9 button {
   padding: 0;
 }
 }
@@ -314,19 +314,19 @@ margin-bottom: 0 !important;
 }
 
 /* Bottom left mic/defean input/output */
-._37e49614b9f110a9-micButtonParent > ._37e49614b9f110a9-buttonChevron {
+.micButtonParent__37e49 > .buttonChevron__37e49 {
   display: none !important;
 }
 
 /* Fix rounding for bottom left buttons */
-._37e49614b9f110a9-micButtonParent ._37e49614b9f110a9-micButtonWithMenu {
+.micButtonParent__37e49 .micButtonWithMenu__37e49 {
   border-bottom-right-radius: 8px;
     border-top-right-radius: 8px;
 }
 
 
 /* revert chat input position */
-.f75fb00fb7356cbe-channelTextArea {
+.channelTextArea_f75fb0 {
     margin-bottom: 25px;
 }
 
@@ -334,64 +334,64 @@ margin-bottom: 0 !important;
 .align-chat-input {
     --custom-channel-textarea-text-area-height: 52px;
 }
-.align-chat-input ._0923f156a0410684-attachWrapper {
+.align-chat-input .attachWrapper__0923f {
     padding-top: 10px;
     padding-bottom: 10px;
 }
 
 /* revert typing bubbles position */
-.align-chat-input .b8880176888cc928-inTextChannel.b8880176888cc928-base {
+.align-chat-input .inTextChannel_b88801.base_b88801 {
     bottom: 0px;
     top: auto;
 }
-.align-chat-input .b8880176888cc928-inTextChannel .b8880176888cc928-typingDots {
+.align-chat-input .inTextChannel_b88801 .typingDots_b88801 {
     margin-left: 0;
 }
-.align-chat-input .b8880176888cc928-inTextChannel .b8880176888cc928-text {
+.align-chat-input .inTextChannel_b88801 .text_b88801 {
     margin-left: 4px;
 }
 
 /* move chat back down to usual position */
-._36d072eab2b2e737-scrollerSpacer {
+.scrollerSpacer__36d07 {
     height: 28px !important;
 }
 
 /* revert color of typing username */
-.align-chat-input .b8880176888cc928-inTextChannel .b8880176888cc928-text>strong {
+.align-chat-input .inTextChannel_b88801 .text_b88801>strong {
     color: var(--text-secondary);
 }
 
 /* change attachment button svg back */
-._0923f156a0410684-attachButton path {
+.attachButton__0923f path {
     d: path("M12 23a11 11 0 1 0 0-22 11 11 0 0 0 0 22Zm0-17a1 1 0 0 1 1 1v4h4a1 1 0 1 1 0 2h-4v4a1 1 0 1 1-2 0v-4H7a1 1 0 1 1 0-2h4V7a1 1 0 0 1 1-1Z");
 }
 
 /* remove weird gradient thing */
-._36d072eab2b2e737-chatTypingGradientAtBottom, ._36d072eab2b2e737-chatTypingGradientNotAtBottom {
+.chatTypingGradientAtBottom__36d07, .chatTypingGradientNotAtBottom__36d07 {
     display: none;
 }
 
-._972a0d22c8afa7f0-channel:not(._972a0d22c8afa7f0-dm):has(a[data-list-item-id$="___quests"]) {
+.channel__972a0:not(.dm__972a0):has(a[data-list-item-id$="___quests"]) {
     /* Scoped to only the Quests list item */
     margin: 0 4px;
-    >._972a0d22c8afa7f0-linkButton >._972a0d22c8afa7f0-link {
+    >.linkButton__972a0 >.link__972a0 {
     padding: 8px;
-    >._972a0d22c8afa7f0-avatarWithText {
+    >.avatarWithText__972a0 {
         /* padding: 0; */
-        >._20a53846fe2e8513-avatar {
+        >.avatar__20a53 {
         margin: 0;
         }
-        >._20a53846fe2e8513-content {
+        >.content__20a53 {
         display: none;
         }
     }
-    >._2b1f52e43a8f1c02-numberBadge {
+    >.numberBadge__2b1f5 {
         position: absolute;
         left: 17.5px;
         bottom: 0;
         transform: scale(0.7);
     }
-    >._4ed1af9a212b8f4f-newBadge {
+    >.newBadge__4ed1a {
         position: absolute;
         left: -3px;
         bottom: 0;
@@ -401,7 +401,7 @@ margin-bottom: 0 !important;
 }
 
 /* Make Friends and Quest thingy on same line */
-._553bf02027ac2419-wrapper {
+.wrapper__553bf {
   position: absolute;
   top: 8px;
   right: 0;

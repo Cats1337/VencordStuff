@@ -1380,13 +1380,13 @@ svg:is(.icon_ac86f6) [d^="M13 16V5.41l3.3 3.3a1 1 0 1 0 1.4-1.42l-5-5a1 1 0 0 0-
     background: linear-gradient(-45deg, currentColor 12px, var(--status-danger) 0, var(--status-danger) 15px, currentColor 0);
 }
 
-.button__67645:not(.micButtonWithMenu__37e49) .lottieIcon__5eb9b>svg>* {
+.button__67645:not(.audioButtonWithMenu__5e764) .lottieIcon__5eb9b>svg>* {
     display: none;
 }
 
 /* Ensure mic/headset Lottie SVG parts are visible (slash, red state, etc.) */
-.button__67645.micButtonWithMenu__37e49 .lottieIcon__5eb9b>svg>*,
-.micButtonWithMenu__37e49 .lottieIcon__5eb9b>svg>* {
+.button__67645.audioButtonWithMenu__5e764 .lottieIcon__5eb9b>svg>*,
+.audioButtonWithMenu__5e764 .lottieIcon__5eb9b>svg>* {
     display: block !important;
 }
 
@@ -1410,23 +1410,23 @@ svg:is(.icon_ac86f6) [d^="M13 16V5.41l3.3 3.3a1 1 0 1 0 1.4-1.42l-5-5a1 1 0 0 0-
     clip-path: path("M5.135 12.5054C5.0905 12.5018 5.0455 12.5 5 12.5H3.3333V10C3.3333 6.3233 6.3242 3.3333 10 3.3333 11.2341 3.3333 12.3909 3.6703 13.3832 4.2572L14.5918 3.0486C13.2743 2.1755 11.6955 1.6667 10 1.6667 5.405 1.6667 1.6667 5.4042 1.6667 10V15.9737L5.135 12.5054ZM16.4375 8.264C16.5869 8.8177 16.6667 9.3997 16.6667 10V12.5H15C14.08 12.5 13.3333 13.2467 13.3333 14.1667V16.6667C13.3333 17.5867 14.08 18.3333 15 18.3333H16.6667C17.5875 18.3333 18.3333 17.5867 18.3333 16.6667V10C18.3333 8.9229 18.128 7.8929 17.7544 6.9471L16.4375 8.264ZM2.6675 19.6869 1.489 18.5084 17.9882 2.0093 19.1667 3.1878 2.6675 19.6869Z");
 }
 
-/* Headset - robust selectors (fix for changed DOM structure) */
-.micButtonWithMenu__37e49 .lottieIcon__5eb9b>svg,
-.button__67645.micButtonWithMenu__37e49 .lottieIcon__5eb9b>svg {
+/* Headset/Deafen - robust selectors (fix for changed DOM structure) */
+.audioButtonWithMenu__5e764 .lottieIcon__5eb9b>svg,
+.button__67645.audioButtonWithMenu__5e764 .lottieIcon__5eb9b>svg {
     clip-path: path("M10 1.6692C5.405 1.6692 1.6667 5.4067 1.6667 10.0026V16.6692C1.6667 17.5892 2.4125 18.3359 3.3333 18.3359H5C5.92 18.3359 6.6667 17.5892 6.6667 16.6692V14.1692C6.6667 13.2492 5.92 12.5026 5 12.5026H3.3333V10.0026C3.3333 6.3259 6.3242 3.3359 10 3.3359 13.6758 3.3359 16.6667 6.3259 16.6667 10.0026V12.5026H15C14.08 12.5026 13.3333 13.2492 13.3333 14.1692V16.6692C13.3333 17.5892 14.08 18.3359 15 18.3359H16.6667C17.5867 18.3359 18.3333 17.5892 18.3333 16.6692V10.0026C18.3333 5.4067 14.595 1.6692 10 1.6692Z");
 }
 
-.micButtonWithMenu__37e49 .lottieIcon__5eb9b[style^="--__lottieIconColor: var(--status-danger)"]>svg,
-.button__67645.micButtonWithMenu__37e49 .lottieIcon__5eb9b[style^="--__lottieIconColor: var(--status-danger)"]>svg {
+.audioButtonWithMenu__5e764 .lottieIcon__5eb9b[style^="--__lottieIconColor: var(--status-danger)"]>svg,
+.button__67645.audioButtonWithMenu__5e764 .lottieIcon__5eb9b[style^="--__lottieIconColor: var(--status-danger)"]>svg {
     clip-path: path("M5.135 12.5054C5.0905 12.5018 5.0455 12.5 5 12.5H3.3333V10C3.3333 6.3233 6.3242 3.3333 10 3.3333 11.2341 3.3333 12.3909 3.6703 13.3832 4.2572L14.5918 3.0486C13.2743 2.1755 11.6955 1.6667 10 1.6667 5.405 1.6667 1.6667 5.4042 1.6667 10V15.9737L5.135 12.5054ZM16.4375 8.264C16.5869 8.8177 16.6667 9.3997 16.6667 10V12.5H15C14.08 12.5 13.3333 13.2467 13.3333 14.1667V16.6667C13.3333 17.5867 14.08 18.3333 15 18.3333H16.6667C17.5875 18.3333 18.3333 17.5867 18.3333 16.6667V10C18.3333 8.9229 18.128 7.8929 17.7544 6.9471L16.4375 8.264ZM2.6675 19.6869 1.489 18.5084 17.9882 2.0093 19.1667 3.1878 2.6675 19.6869Z");
 }
 
 /* When the mic/headset toggle is active (aria-checked=true), force red color and show the slash */
-.micButtonWithMenu__37e49[aria-checked="true"] {
+.audioButtonWithMenu__5e764[aria-checked="true"] {
     color: var(--status-danger) !important;
 }
 
-.micButtonWithMenu__37e49[aria-checked="true"] .lottieIcon__5eb9b>svg {
+.audioButtonWithMenu__5e764[aria-checked="true"] .lottieIcon__5eb9b>svg {
     background: linear-gradient(-45deg, var(--status-danger) 0%, var(--status-danger) 100%) !important;
     /* ensure the headset-slash clip path is applied when toggled */
     clip-path: path("M5.135 12.5054C5.0905 12.5018 5.0455 12.5 5 12.5H3.3333V10C3.3333 6.3233 6.3242 3.3333 10 3.3333 11.2341 3.3333 12.3909 3.6703 13.3832 4.2572L14.5918 3.0486C13.2743 2.1755 11.6955 1.6667 10 1.6667 5.405 1.6667 1.6667 5.4042 1.6667 10V15.9737L5.135 12.5054ZM16.4375 8.264C16.5869 8.8177 16.6667 9.3997 16.6667 10V12.5H15C14.08 12.5 13.3333 13.2467 13.3333 14.1667V16.6667C13.3333 17.5867 14.08 18.3333 15 18.3333H16.6667C17.5875 18.3333 18.3333 17.5867 18.3333 16.6667V10C18.3333 8.9229 18.128 7.8929 17.7544 6.9471L16.4375 8.264ZM2.6675 19.6869 1.489 18.5084 17.9882 2.0093 19.1667 3.1878 2.6675 19.6869Z") !important;
@@ -1482,14 +1482,14 @@ svg:is(.icon_ac86f6) [d^="M13 16V5.41l3.3 3.3a1 1 0 1 0 1.4-1.42l-5-5a1 1 0 0 0-
 
 
 /* Mic */
-.micButtonParent__37e49:first-child .lottieIcon__5eb9b {
+.audioButtonParent__5e764:first-child .lottieIcon__5eb9b {
     background: currentColor !important;
     -webkit-mask: url("data:image/svg+xml;utf8,\<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>\<path d='M12 14a3 3 0 0 0 3-3V5a3 3 0 1 0-6 0v6a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21H9v2h6v-2h-2v-3.08A7 7 0 0 0 19 11h-2z'/>\</svg>") center/20px no-repeat !important;
     mask: url("data:image/svg+xml;utf8,\<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>\<path d='M12 14a3 3 0 0 0 3-3V5a3 3 0 1 0-6 0v6a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21H9v2h6v-2h-2v-3.08A7 7 0 0 0 19 11h-2z'/>\</svg>") center/20px no-repeat !important;
 }
 
 /* MicSlash - I cannot be bothered*/
-.micButtonParent__37e49:first-child button[aria-checked="true"] .contents__201d5::after {
+.audioButtonParent__5e764:first-child button[aria-checked="true"] .contents__201d5::after {
   content: "";
   position: absolute;
   left: 50%;
