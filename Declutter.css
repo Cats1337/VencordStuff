@@ -48,7 +48,7 @@ button:has(div[class*=emojiLockIconContainer]) {
 }
 
 /* --- Chatbox Buttons --- */
-[aria-label*="Gift"],
+[aria-label*="gift"],
 [class*="channelAppLauncher"],
 [class*="stickerButton"] {
   display: none !important;
@@ -56,6 +56,13 @@ button:has(div[class*=emojiLockIconContainer]) {
 
 [class*="buttonContainer"]:has([class*="stickerButton"]) {
     display: none !important;
+}
+
+/* Target gift by top half of box, ribbon bow, and ribbon loops */
+div[role="button"]:has(svg path[d*=" M-7,10 C-8.104"]),
+div[role="button"]:has(svg path[d*=" M-10,-2 C-10,-3.105"]),
+div[role="button"]:has(svg path[d*=" M7,-6 C7,-7.657"][d*=" M-7,-6 C-7,-7.657"]) {
+  display: none !important;
 }
 
 /* --- Super Reactions --- */
