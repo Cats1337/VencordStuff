@@ -29,7 +29,7 @@ button:has(div[class*=emojiLockIconContainer]) {
   display: none !important;
 }
 
-.channel__972a0.container__23ba6:has(a[href="/store"]) {
+.channel__972a0.container_a244c3:has(a[href="/store"]) {
 	display: none !important;
 }
 
@@ -48,7 +48,7 @@ button:has(div[class*=emojiLockIconContainer]) {
 }
 
 /* --- Chatbox Buttons --- */
-[aria-label="Send a gift"],
+[aria-label*="Gift"],
 [class*="channelAppLauncher"],
 [class*="stickerButton"] {
   display: none !important;
@@ -314,7 +314,7 @@ margin-bottom: 0 !important;
 }
 
 /* Bottom left mic/defean input/output */
-.micButtonParent__37e49 > .buttonChevron__37e49 {
+.micButtonParent__37e49 > .buttonChevron__5e764 {
   display: none !important;
 }
 
