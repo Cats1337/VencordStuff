@@ -65,6 +65,11 @@ div[role="button"]:has(svg path[d*=" M7,-6 C7,-7.657"][d*=" M-7,-6 C-7,-7.657"])
   display: none !important;
 }
 
+/* Bug Report */
+div:has(> div[role="button"] svg path[d*="M9.54"]) {
+  display: none !important;
+}
+
 /* --- Super Reactions --- */
 [id="super-reaction-picker-tab"],
 [class*="shakeReaction"],
