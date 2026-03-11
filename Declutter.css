@@ -111,18 +111,18 @@ div[class*="controlButton"]:has(button[aria-label="Turn On Camera"]) {
 /* ----------- */
 /* Hang Status */
 /* ----------- */
-[class*="popoutWrapper"],
-[class*=userPopoutOverlayBackground] {
-  max-height: 60vh;
-}
 
-[class*="optionsButtonContainer"]{
+/* Hide Status picker menu, and Status' */
+#hang-status-picker,
+[class*="hangStatusContent__"],
+[class*="popover"]:not(:has([class*="streamPreviewWrapper__"]))
+ {
   display: none !important;
 }
 
 /* Repair Live */
-[class*="liveIconSpacing"]{
-  display: flex !important;
+[class*="draggable__"] [class*="voiceUser__"] > [class*="content__"] > [class*="icons__"] > [class*="iconGroup__"]:not(:has([class*="liveShapeRound"])) {
+  display: none !important;
 }
 
 /* -------------- */
