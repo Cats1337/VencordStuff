@@ -120,10 +120,11 @@ div[class*="controlButton"]:has(button[aria-label="Turn On Camera"]) {
   display: none !important;
 }
 
-/* Repair Live */
-[class*="draggable__"] [class*="voiceUser__"] > [class*="content__"] > [class*="icons__"] > [class*="iconGroup__"]:not(:has([class*="liveShapeRound"])) {
+/* Repair Live, but keep mute/deafen indicators visible */
+[class*="draggable__"] [class*="voiceUser__"] > [class*="content__"] > [class*="icons__"] > [class*="iconGroup__"]:not(:has([class*="liveShapeRound"])):not(:has(svg path[d*="A8 8 0 0 0 20 10"])):not(:has(svg path[d*="A11 11 0 0 0 2.18 16.94"])) {
   display: none !important;
 }
+
 
 /* -------------- */
 /* Call/Expanded Voice */
