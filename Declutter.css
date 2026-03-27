@@ -423,3 +423,14 @@ margin-bottom: 0 !important;
 div[class*="friendsButtonContainer"] {
     width: 80%;
 }
+
+/* Hide Activity Header & Cards */
+h3[class*="membersGroup_"]:has(> span[class*="headerContainer_"]),
+[class*="container_"][class*="openOnHover_"][class*="usesCardRows_"] {
+    display: none !important;
+}
+
+/* Hide "Invite to Voice" */
+[class*="animation_"]:has(> [class*="clickable_"] > [class*="content_"] > [class*="leading_"] > [class*="timer_"]){
+	display: none !important;
+}
