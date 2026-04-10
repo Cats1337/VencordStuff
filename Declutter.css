@@ -48,7 +48,6 @@ button:has(div[class*=emojiLockIconContainer]) {
 }
 
 /* --- Chatbox Buttons --- */
-[aria-label*="gift"],
 [class*="channelAppLauncher"],
 [class*="stickerButton"] {
   display: none !important;
@@ -89,18 +88,11 @@ div:has(> div[role="button"] svg path[d*="M9.54"]) {
 }
 
 /* --- Voice and Video --- */
-/* Remove "Start an Activity" and "Turn On Camera" */
-[class*="actionButtons"] > button[aria-label="Start An Activity"],
-[class*="actionButtons"] > button[aria-label="Turn On Camera"],
-div[class*="controlButton"]:has(button[aria-label="Start An Activity"]),
-div[class*="controlButton"]:has(button[aria-label="Turn On Camera"]) {
-    display: none !important;
-}
-/* ,
-[class*="iconWrapper"][aria-label="Start Video Call"] */
-
-.wrapper__1405b > .controlButton__1405b:first-child {
-  display: none;
+/* Hide Turn On Camera and Start Activity without aria-label selectors */
+[class*="actionButtons"] > button:has(svg[viewBox="0 0 96 96"]),
+.wrapper__1405b .buttonContainer__1405b .attachedCaretButtonContainer_f1ceac:has(svg[viewBox="0 0 96 96"]),
+.wrapper__1405b .attachedCaretButtonContainer_f1ceac:has(svg path[d*="M-5.5,-8"]):has(svg path[d*="M-2.5,-2.881"]) {
+  display: none !important;
 }
 
 /* Chat time connected fix */
@@ -129,27 +121,22 @@ div[class*="controlButton"]:has(button[aria-label="Turn On Camera"]) {
 /* -------------- */
 /* Call/Expanded Voice */
 /* -------------- */
-/* .attachedCaretButtonContainer_f1ceac:nth-child(2), Camera */
-[class*="attachedCaretButtonContainer"]:nth-child(3), /* Soundboard */
-[class*="attachedCaretButtonContainer"]:nth-child(4), /* Gift */
-[class*="attachedCaretButtonContainer"]:has([aria-label="Start An Activity"]) /* Activities */
-{
-    display: none !important;
-}
-
-/* Hide Nubs */
-[class*="contextMenuNubExperiment"][aria-label="More Options"]{
-    display: none !important;
-}
+/* Keep Soundboard and More Options visible; hide specific controls via icon-based rules below. */
 
 /* Re-round the buttons */
 /* [class*="attachedButton"]{
     border-radius: 8px;
 } */
 
-/* Hide 'Turn On Camera' & 'Gift' in bottom left */
-[class*="actionButtons"] > button:nth-of-type(1),
-[class*="actionButtons"] > button:nth-of-type(3) {
+/* Hide gift in bottom-left actions with icon-path matching (no labels) */
+[class*="actionButtons"] > button:has(svg path[d*=" M-7,10 C-8.104"]),
+[class*="actionButtons"] > button:has(svg path[d*=" M-10,-2 C-10,-3.105"]),
+[class*="actionButtons"] > button:has(svg path[d*=" M7,-6 C7,-7.657"][d*=" M-7,-6 C-7,-7.657"]) {
+  display: none !important;
+}
+
+/* Hide Start Activity in the bottom action row (label-free selector) */
+[class*="actionButtons"] > button:has(svg[viewBox="0 0 96 96"]) {
   display: none !important;
 }
 
