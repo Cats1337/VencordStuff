@@ -90,6 +90,7 @@ div:has(> div[role="button"] svg path[d*="M9.54"]) {
 /* --- Voice and Video --- */
 /* Hide Turn On Camera and Start Activity without aria-label selectors */
 [class*="actionButtons"] > button:has(svg[viewBox="0 0 96 96"]),
+[class*="actionButtons"] > button:has(svg path[d*="M-5.5,-8"]):has(svg path[d*="M-2.5,-2.881"]),
 .wrapper__1405b .buttonContainer__1405b .attachedCaretButtonContainer_f1ceac:has(svg[viewBox="0 0 96 96"]),
 .wrapper__1405b .attachedCaretButtonContainer_f1ceac:has(svg path[d*="M-5.5,-8"]):has(svg path[d*="M-2.5,-2.881"]) {
   display: none !important;
