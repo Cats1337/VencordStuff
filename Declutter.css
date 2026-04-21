@@ -422,3 +422,8 @@ h3[class*="membersGroup_"]:has(> span[class*="headerContainer_"]),
 [class*="animation_"]:has(> [class*="clickable_"] > [class*="content_"] > [class*="leading_"] > [class*="timer_"]){
 	display: none !important;
 }
+
+/* Hide rows containing the specific clock badge path */
+[role="button"]:has(svg path[d^="M12 23a11 11"]) {
+  display: none !important;
+}
