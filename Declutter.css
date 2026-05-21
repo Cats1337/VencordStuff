@@ -423,7 +423,20 @@ h3[class*="membersGroup_"]:has(> span[class*="headerContainer_"]),
 	display: none !important;
 }
 
+/* TO FIX: Also hides manage members, as it's just targetting what seems to be circle? */
 /* Hide rows containing the specific clock badge path */
-[role="button"]:has(svg path[d^="M12 23a11 11"]) {
+/* [role="button"]:has(svg path[d^="M12 23a11 11"]) {
+  display: none !important;
+} */
+
+/* setVibeButton */
+[class*="setVibeButton"] {
+  display: none !important;
+}
+
+/* Hide voice channel vibe image */
+[class*="mainContainer__"],
+[class*="imageContainer__"],
+[class*="hoverOverlay__"] {
   display: none !important;
 }
