@@ -435,8 +435,8 @@ h3[class*="membersGroup_"]:has(> span[class*="headerContainer_"]),
 }
 
 /* Hide voice channel vibe image */
-[class*="mainContainer__"],
+/* [class*="mainContainer__"],
 [class*="imageContainer__"],
 [class*="hoverOverlay__"] {
   display: none !important;
-}
+} */
