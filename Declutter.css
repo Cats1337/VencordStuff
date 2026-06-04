@@ -29,7 +29,7 @@ button:has(div[class*=emojiLockIconContainer]) {
   display: none !important;
 }
 
-.channel__972a0.container_a244c3:has(a[href="/store"]) {
+.channel__972a0.container__23ba6:has(a[href="/store"]) {
 	display: none !important;
 }
 
@@ -412,8 +412,12 @@ div[class*="friendsButtonContainer"] {
     width: 80%;
 }
 
-/* Hide Activity Header & Cards */
-h3[class*="membersGroup_"]:has(> span[class*="headerContainer_"]),
+/* Hide Activity Header */
+h3[class*="membersGroup_"]:has(div[class*="headerContainer_"]) {
+    display: none !important;
+}
+
+/* Hide Activity Cards */
 [class*="container_"][class*="openOnHover_"][class*="usesCardRows_"] {
     display: none !important;
 }
