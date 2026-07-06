@@ -8,7 +8,7 @@
  */
 
 /* --- General Nitro and Shop Cleanup --- */
-[href="/store"], 
+/* [href="/store"],  */
 [href="/shop"],
 [class*="nowPlayingColumn"],
 a[data-list-item-id$="_nitro"],
