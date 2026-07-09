@@ -1,6 +1,6 @@
 /**
  * @name Declutter
- * @version 1.0.0.7
+ * @version 1.0.0.8
  * @description Various Discord UI tweaks to declutter the UI and remove unwanted elements.
  * @author Cats
  *
@@ -107,8 +107,7 @@ div:has(> div[role="button"] svg path[d*="M9.54"]) {
 
 /* Hide Status picker menu, and Status' */
 #hang-status-picker,
-[class*="hangStatusContent__"],
-[class*="popover"]:not(:has([class*="streamPreviewWrapper__"]))
+div[class*="popover"]:has([class*="headerContainer__"]):has([class*="detailsContainer__"]):has([class*="badgesContainerPopout__"])
  {
   display: none !important;
 }
@@ -423,7 +422,7 @@ h3[class*="membersGroup_"]:has(div[class*="headerContainer_"]) {
 }
 
 /* Hide "Invite to Voice" */
-[class*="animation_"]:has(> [class*="clickable_"] > [class*="content_"] > [class*="leading_"] > [class*="timer_"]){
+div[class*="animation_"]:has(> div[role="button"][aria-label^="Invite to Voice"]){
 	display: none !important;
 }
 
