@@ -107,11 +107,11 @@ div:has(> div[role="button"] svg path[d*="M9.54"]) {
 
 /* Hide Status picker menu, and Status' */
 /* Repair Live, but keep mute/deafen indicators visible */
-#hang-status-picker,
+/* #hang-status-picker,
 div[class*="popover"]:has([class*="headerContainer__"]):has([class*="detailsContainer__"]):has([class*="badgesContainerPopout__"]),
 [class*="draggable__"] [class*="voiceUser__"] > [class*="content__"] > [class*="icons__"] > [class*="iconGroup__"]:not(:has([class*="liveShapeRound"])):not(:has(svg path[d*="A8 8 0 0 0 20 10"])):not(:has(svg path[d*="A11 11 0 0 0 2.18 16.94"])) {
-  /* display: none !important; */
-}
+  display: none !important;
+} */
 
 
 /* -------------- */
@@ -165,35 +165,29 @@ div[class*="popover"]:has([class*="headerContainer__"]):has([class*="detailsCont
 /* ------- */
 /* Privacy */
 /* ------- */
-/* Hide the reveal/edit buttons so users can't click to reveal. */
-button[aria-label="Reveal email address"],
-button[aria-label="Reveal phone number"] {
-  display: none !important;
-}
 
-/* Hide actual values */
-[class$="textRevealer"] {
-  color: transparent !important;
-  position: relative;
-  display: inline-block;
-}
-
-/* Add a subtle placeholder label for the masked fields. */
-[class$="textRevealer"]::after {
-  content: "Hidden";
-  color: grey;
-  font-style: italic;
-  position: absolute;
-  left: 0;
-  top: 0;
-  pointer-events: none;
-}
-
-/* Hide phone number */
+/* Hide phone number reveal */
 [class$="-control"] > div:has([class*="phoneRevealer"]) {
-  display: none !important;
+    display: none !important;
 }
 
+/* Email row */
+div[data-align="center"]:has(> div.defaultColor__4bd52 + button > span) {
+    > div.defaultColor__4bd52 {
+        font-size: 0;
+    }
+
+    > div.defaultColor__4bd52::after {
+        content: "Hidden";
+        font-size: 1rem;
+        font-style: italic;
+        color: grey;
+    }
+
+    > button {
+        display: none;
+    }
+}
 /* ----- */
 /* Other */
 /* ----- */
