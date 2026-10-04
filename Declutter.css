@@ -1,14 +1,28 @@
 /**
  * @name Declutter
- * @version 1.0.0.8
+ * @version 1.0.0.9
  * @description Various Discord UI tweaks to declutter the UI and remove unwanted elements.
  * @author Cats
  *
  * @source https://github.com/Cats1337/VencordStuff
  */
 
+ 
+/* Font fix for a thing I forgot what exactly... */
+@font-face {
+    font-family: "Noto Sans Bamum";
+    src: url("https://notofonts.github.io/bamum/fonts/NotoSansBamum/full/ttf/NotoSansBamum-Regular.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Noto Sans Batak";
+    src: url("https://notofonts.github.io/batak/fonts/NotoSansBatak/full/ttf/NotoSansBatak-Regular.ttf") format("truetype");
+}
+:root {
+  --font-primary: "gg sans", "Noto Sans Math", "Noto Sans Bamum", "Noto Sans Batak", "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
 /* --- General Nitro and Shop Cleanup --- */
-/* [href="/store"],  */
+/* Hide Discord Nitro / Shop / Upsells */
 [href="/shop"],
 [class*="nowPlayingColumn"],
 a[data-list-item-id$="_nitro"],
@@ -16,57 +30,47 @@ a[data-list-item-id$="_nitro"],
 [class*="hasCollectiblesUpsell"],
 [class*="characterCount"] > div[class*="upsell"],
 [class*="selectorButtonPremiumRequired"],
-[class*="shinyButton"]:has(div[class*=premiumSubscribeButton]),
+[class*="shinyButton"]:has(div[class*="premiumSubscribeButton"]),
 [class*="nitroTextAndBadge"],
 [class*="tooltipPremiumContent"],
-[class*="nitroTopDividerContainer"], 
+[class*="nitroTopDividerContainer"],
 div[class*="nitroTopDividerContainer"] ~ div,
 [class*="upsellContainer"],
 [class*="nitroBottomDivider"],
 [class*="categoryItemLockIconContainer"],
 [class*="emojiLockIconContainer"],
-button:has(div[class*=emojiLockIconContainer]) {
-  display: none !important;
-}
-
-.channel__972a0.container__23ba6:has(a[href="/store"]) {
-	display: none !important;
+button:has([class*="emojiLockIconContainer"]),
+div[class*="channel__"]:has(a[href="/store"]) {
+    display: none !important;
 }
 
 /* Remove the purple background in the emoji picker and autocomplete */
-[class*=categorySectionNitroLocked] { background-color: unset !important; }
+[class*="categorySectionNitroLocked"] {
+    background-color: unset !important;
+}
 /* Restore grayscale for locked emojis */
-[class*=categorySectionNitroLocked] > ul > li > button > img[class*="lockedEmoji"] {
-  filter: grayscale();
+[class*="categorySectionNitroLocked"] > ul > li > button > img[class*="lockedEmoji"] {
+    filter: grayscale();
 }
 
 /* Keeps emoji button normal */
 [class*="spriteContainer"] {
-  --custom-emoji-sprite-row: 2 !important;
-  --custom-emoji-sprite-col: 10 !important;
-  display: flex !important;
+    --custom-emoji-sprite-row: 2 !important;
+    --custom-emoji-sprite-col: 10 !important;
+    display: flex !important;
 }
 
 /* --- Chatbox Buttons --- */
 [class*="channelAppLauncher"],
-[class*="stickerButton"] {
-  display: none !important;
-}
-
-[class*="buttonContainer"]:has([class*="stickerButton"]) {
-    display: none !important;
-}
-
+[class*="stickerButton"],
+[class*="buttonContainer"]:has([class*="stickerButton"]),
 /* Target gift by top half of box, ribbon bow, and ribbon loops */
 div[role="button"]:has(svg path[d*=" M-7,10 C-8.104"]),
 div[role="button"]:has(svg path[d*=" M-10,-2 C-10,-3.105"]),
-div[role="button"]:has(svg path[d*=" M7,-6 C7,-7.657"][d*=" M-7,-6 C-7,-7.657"]) {
-  display: none !important;
-}
-
+div[role="button"]:has(svg path[d*=" M7,-6 C7,-7.657"][d*=" M-7,-6 C-7,-7.657"]),
 /* Bug Report */
 div:has(> div[role="button"] svg path[d*="M9.54"]) {
-  display: none !important;
+    display: none !important;
 }
 
 /* --- Super Reactions --- */
@@ -76,15 +80,26 @@ div:has(> div[role="button"] svg path[d*="M9.54"]) {
 [class*="burstToggle"],
 [class*="burstReactionTooltipPrompt"],
 [class*="NitroLocked"] {
-  display: none !important;
+    display: none !important;
 }
 
 /* Super reaction animation */
-[class*="shakeReaction"] { animation: none !important; }
-[class*="reactionInner"] > div > div[class*="effectsWrapper"] { display: none !important; }
-[class*="hideEmoji"] { animation: blink-emoji 1s linear infinite; opacity: 255; }
-@keyframes blink-emoji {  
-  50% { opacity: 0; }
+[class*="shakeReaction"] {
+    animation: none !important;
+}
+/* Remove the effects from the reaction inner container */
+[class*="reactionInner"] > div > div[class*="effectsWrapper"] {
+    display: none !important;
+}
+/* Forces nomal smile emoji button */
+[class*="hideEmoji"] {
+    animation: blink-emoji 1s linear infinite;
+    opacity: 255;
+}
+@keyframes blink-emoji {
+    50% {
+        opacity: 0;
+    }
 }
 
 /* --- Voice and Video --- */
@@ -93,12 +108,12 @@ div:has(> div[role="button"] svg path[d*="M9.54"]) {
 [class*="actionButtons"] > button:has(svg path[d*="M-5.5,-8"]):has(svg path[d*="M-2.5,-2.881"]),
 .wrapper__1405b .buttonContainer__1405b .attachedCaretButtonContainer_f1ceac:has(svg[viewBox="0 0 96 96"]),
 .wrapper__1405b .attachedCaretButtonContainer_f1ceac:has(svg path[d*="M-5.5,-8"]):has(svg path[d*="M-2.5,-2.881"]) {
-  display: none !important;
+    display: none !important;
 }
 
 /* Chat time connected fix */
 [class*="rtcConnectionStatusWrapper"] {
-  margin-right: -10px;
+    margin-right: -10px;
 }
 
 /* ----------- */
@@ -112,7 +127,6 @@ div[class*="popover"]:has([class*="headerContainer__"]):has([class*="detailsCont
 [class*="draggable__"] [class*="voiceUser__"] > [class*="content__"] > [class*="icons__"] > [class*="iconGroup__"]:not(:has([class*="liveShapeRound"])):not(:has(svg path[d*="A8 8 0 0 0 20 10"])):not(:has(svg path[d*="A11 11 0 0 0 2.18 16.94"])) {
   display: none !important;
 } */
-
 
 /* -------------- */
 /* Call/Expanded Voice */
@@ -128,38 +142,34 @@ div[class*="popover"]:has([class*="headerContainer__"]):has([class*="detailsCont
 [class*="actionButtons"] > button:has(svg path[d*=" M-7,10 C-8.104"]),
 [class*="actionButtons"] > button:has(svg path[d*=" M-10,-2 C-10,-3.105"]),
 [class*="actionButtons"] > button:has(svg path[d*=" M7,-6 C7,-7.657"][d*=" M-7,-6 C-7,-7.657"]) {
-  display: none !important;
+    display: none !important;
 }
 
 /* Hide Start Activity in the bottom action row (label-free selector) */
 [class*="actionButtons"] > button:has(svg[viewBox="0 0 96 96"]) {
-  display: none !important;
+    display: none !important;
 }
-
 
 /* ---- */
 /* Chat */
 /* ---- */
 /* Hide all the buttons in the more menu unless hovered (Emoji, Edit, Reply) */
 [class*="buttonsInner"]:not(:hover):not(:focus-within) > :not(:nth-last-child(2)) {
-  display: none !important;
+    display: none !important;
 }
 
 /* Confetti */
 #message-add-confetti-potion,
 [class*="messageConfettiButton"],
-[class*="buttonsInner"] > [role=button]:nth-child(3) {
-  display: none !important;
+[class*="buttonsInner"] > [role="button"]:nth-child(3) {
+    display: none !important;
 }
 
-/* Hide 'Edit Image With Apps' button */
-[class*="hoverButton"]:last-child{
-  display: none !important;
-}
-
-/* Hide Apps in chatbar */
-.app-launcher-entrypoint{
-    display: none;
+/* Hide Apps buttons */
+#channel-attach-SLASH_COMMAND,
+[class*="hoverButton"]:last-child,
+.app-launcher-entrypoint {
+    display: none !important;
 }
 
 /* ------- */
@@ -192,128 +202,98 @@ div[data-align="center"]:has(> div.defaultColor__4bd52 + button > span) {
 /* Other */
 /* ----- */
 /* APP -> BOT */
-[class*=botTagRegular]:not([class*=botTagOP],[class*=botTagRemix])>span:before {
-  content: "Bot";
-  font-size: 0.625rem;
-  line-height: 1.3;
+[class*="botTagRegular"]:not([class*="botTagOP"], [class*="botTagRemix"]) > span:before {
+    content: "Bot";
+    font-size: 0.625rem;
+    line-height: 1.3;
 }
-[class*=botTagRegular]:not([class*=botTagOP],[class*=botTagRemix])>span {
-  font-size: 0 !important;
-  line-height: 0 !important;
+[class*="botTagRegular"]:not([class*="botTagOP"], [class*="botTagRemix"]) > span {
+    font-size: 0 !important;
+    line-height: 0 !important;
 }
 
 /* Shush Vencord bot */
 [class*="message"]:has([class*="contents"] > img[src*="1017176847865352332"]):has(.channelMention) {
-  display: none !important;
+    display: none !important;
 }
 
 /* Hide Vencord donation messages */
-.vc-settings-donate, .vc-special-card {
+.vc-settings-donate,
+.vc-special-card {
     display: none !important;
 }
 
 /* Visual Refresh Fixes */
 [class*="role"][class*="pill"] {
-  position: relative;
-  background: none;
-  border: none;
-  padding-left: 28px;
+    position: relative;
+    background: none;
+    border: none;
+    padding-left: 28px;
 }
 
 [class*="role"][class*="pill"] > span {
-  z-index: 1;
+    z-index: 1;
 }
 
 [class*="role"][class*="pill"] [class*="roleRemoveButton"] {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-  margin: 0 !important;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    margin: 0 !important;
 }
 
 [class*="role"][class*="pill"] [class*="roleCircle"] {
-  margin: 6px 8px;
+    margin: 6px 8px;
 }
 
 [class*="role"][class*="pill"] [class*="roleCircle"]::before {
-  content: '';
-  display: block;
-  position: absolute;
-  background-color: inherit;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-  border-radius: var(--radius-xs);
-  filter: brightness(1.1);
-  opacity: 0.25;
+    content: "";
+    display: block;
+    position: absolute;
+    background-color: inherit;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    border-radius: var(--radius-xs);
+    filter: brightness(1.1);
+    opacity: 0.25;
 }
 
 .visual-refresh {
-  --custom-channel-textarea-text-area-height: 56px;
-  [class*="form"] {
+    --custom-channel-textarea-text-area-height: 56px;
+    [class*="form"] {
       display: flex;
       flex-direction: column;
-  }
-  [class*="channelTextArea"] {
+    }
+    [class*="channelTextArea"] {
       margin-bottom: 8px;
-  }
+    }
 }
 
 .visual-refresh section[class*="panels"] {
-margin-left: var(--custom-guild-list-width);
-width: calc(100% - var(--space-xs)*2 - var(--custom-guild-list-width)) !important;
-.actionButtons_e131a9 button {
-  padding: 0;
-}
+    margin-left: var(--custom-guild-list-width);
+    width: calc(100% - var(--space-xs) * 2 - var(--custom-guild-list-width)) !important;
+    .actionButtons_e131a9 button {
+        padding: 0;
+    }
 }
 nav[class*="guilds"] {
-margin-bottom: 0 !important;
-}
-
-
-/* Hide Apps button(s) */
-#channel-attach-SLASH_COMMAND {
-  display: none !important;
-}
-
-[class*="hoverButton"][aria-label="Edit Image with Apps"] {
-  display: none !important;
-}
-
-/* Font fix for a thing I forgot what exactly... */
-@font-face{
-  font-family:"Noto Sans Bamum";
-  src:url("https://notofonts.github.io/bamum/fonts/NotoSansBamum/full/ttf/NotoSansBamum-Regular.ttf") format("truetype");
-}
-
-@font-face{
-  font-family:"Noto Sans Batak";
-  src:url("https://notofonts.github.io/batak/fonts/NotoSansBatak/full/ttf/NotoSansBatak-Regular.ttf") format("truetype");
-}
-
-:root{
-  --font-primary: "gg sans",
-                  "Noto Sans Math",
-                  "Noto Sans Bamum",
-                  "Noto Sans Batak",
-                  "Noto Sans",
-                  "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin-bottom: 0 !important;
 }
 
 /* Bottom left mic/defean input/output */
 .micButtonParent__37e49 > .buttonChevron__5e764 {
-  display: none !important;
+    display: none !important;
 }
 
 /* Fix rounding for bottom left buttons */
 .micButtonParent__37e49 .micButtonWithMenu__37e49 {
-  border-bottom-right-radius: 8px;
+    border-bottom-right-radius: 8px;
     border-top-right-radius: 8px;
 }
-
 
 /* revert chat input position */
 .channelTextArea_f75fb0 {
@@ -347,7 +327,7 @@ margin-bottom: 0 !important;
 }
 
 /* revert color of typing username */
-.align-chat-input .inTextChannel_b88801 .text_b88801>strong {
+.align-chat-input .inTextChannel_b88801 .text_b88801 > strong {
     color: var(--text-secondary);
 }
 
@@ -357,63 +337,60 @@ margin-bottom: 0 !important;
 }
 
 /* remove weird gradient thing */
-.chatTypingGradientAtBottom__36d07, .chatTypingGradientNotAtBottom__36d07 {
+.chatTypingGradientAtBottom__36d07,
+.chatTypingGradientNotAtBottom__36d07 {
     display: none;
 }
 
 .channel__972a0:not(.dm__972a0):has(a[data-list-item-id$="___quests"]) {
     /* Scoped to only the Quests list item */
     margin: 0 4px;
-    >.linkButton__972a0 >.link__972a0 {
-    padding: 8px;
-    >.avatarWithText__972a0 {
-        /* padding: 0; */
-        >.avatar__20a53 {
-        margin: 0;
+    > .linkButton__972a0 > .link__972a0 {
+        padding: 8px;
+        > .avatarWithText__972a0 {
+            /* padding: 0; */
+            > .avatar__20a53 {
+                margin: 0;
+            }
+            > .content__20a53 {
+                display: none;
+            }
         }
-        >.content__20a53 {
-        display: none;
+        > .numberBadge__2b1f5 {
+            position: absolute;
+            left: 17.5px;
+            bottom: 0;
+            transform: scale(0.7);
         }
-    }
-    >.numberBadge__2b1f5 {
-        position: absolute;
-        left: 17.5px;
-        bottom: 0;
-        transform: scale(0.7);
-    }
-    >.newBadge__4ed1a {
-        position: absolute;
-        left: -3px;
-        bottom: 0;
-        transform: scale(0.7);
-    }
+        > .newBadge__4ed1a {
+            position: absolute;
+            left: -3px;
+            bottom: 0;
+            transform: scale(0.7);
+        }
     }
 }
 
 /* Make Friends and Quest thingy on same line */
 .wrapper__553bf {
-  position: absolute;
-  top: 8px;
-  right: 0;
+    position: absolute;
+    top: 8px;
+    right: 0;
 }
 
 div[class*="friendsButtonContainer"] {
     width: 80%;
 }
 
-/* Hide Activity Header */
-h3[class*="membersGroup_"]:has(div[class*="headerContainer_"]) {
-    display: none !important;
-}
-
-/* Hide Activity Cards */
-[class*="container_"][class*="openOnHover_"][class*="usesCardRows_"] {
+/* Hide Activity Header & Cards */
+h3[class*="membersGroup_"]:has(div[class*="headerContainer_"]),
+[data-list-item-id^="members-"]:has(img[class*="contentImage_"]) {
     display: none !important;
 }
 
 /* Hide "Invite to Voice" */
-div[class*="animation_"]:has(> div[role="button"][aria-label^="Invite to Voice"]){
-	display: none !important;
+div[class*="animation_"]:has(> div[role="button"][aria-label^="Invite to Voice"]) {
+    display: none !important;
 }
 
 /* TO FIX: Also hides manage members, as it's just targetting what seems to be circle? */
@@ -424,7 +401,7 @@ div[class*="animation_"]:has(> div[role="button"][aria-label^="Invite to Voice"]
 
 /* setVibeButton */
 [class*="setVibeButton"] {
-  display: none !important;
+    display: none !important;
 }
 
 /* Hide voice channel vibe image */
