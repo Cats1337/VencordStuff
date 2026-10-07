@@ -212,11 +212,6 @@ div[data-align="center"]:has(> div.defaultColor__4bd52 + button > span) {
     line-height: 0 !important;
 }
 
-/* Shush Vencord bot */
-[class*="message"]:has([class*="contents"] > img[src*="1017176847865352332"]):has(.channelMention) {
-    display: none !important;
-}
-
 /* Hide Vencord donation messages */
 .vc-settings-donate,
 .vc-special-card {
