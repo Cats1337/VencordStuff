@@ -107,7 +107,8 @@ div:has(> div[role="button"] svg path[d*="M9.54"]) {
 [class*="actionButtons"] > button:has(svg[viewBox="0 0 96 96"]),
 [class*="actionButtons"] > button:has(svg path[d*="M-5.5,-8"]):has(svg path[d*="M-2.5,-2.881"]),
 .wrapper__1405b .buttonContainer__1405b .attachedCaretButtonContainer_f1ceac:has(svg[viewBox="0 0 96 96"]),
-.wrapper__1405b .attachedCaretButtonContainer_f1ceac:has(svg path[d*="M-5.5,-8"]):has(svg path[d*="M-2.5,-2.881"]) {
+.wrapper__1405b .attachedCaretButtonContainer_f1ceac:has(svg path[d*="M-5.5,-8"]):has(svg path[d*="M-2.5,-2.881"]),
+[class*="disabledButtonWrapper"]:has(button:disabled svg[viewBox="0 0 96 96"]) {
     display: none !important;
 }
 
@@ -365,6 +366,8 @@ nav[class*="guilds"] {
         }
     }
 }
+
+.container__60f82 > div:not(:has(.expirationCopy_b5b7aa)) { display: none; }
 
 /* Make Friends and Quest thingy on same line */
 .wrapper__553bf {
